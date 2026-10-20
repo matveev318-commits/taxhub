@@ -15,7 +15,6 @@
         .content { padding: 25px; display: none; }
         .content.active { display: block; }
         
-        /* Формы и расчеты */
         label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; color: #374151; }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; font-size: 16px; background: #f9fafb; transition: border-color 0.2s; }
         input:focus, select:focus { border-color: #2563eb; outline: none; background: #ffffff; }
@@ -26,14 +25,12 @@
         .hint { font-size: 12px; color: #6b7280; margin-top: -10px; margin-bottom: 15px; display: block; }
         .sub-fields { display: none; padding: 15px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 15px; }
         
-        /* Брендовые баннеры */
         .ad-banner-img { position: relative; display: flex; align-items: center; width: 100%; height: 140px; margin-top: 25px; border-radius: 12px; text-decoration: none; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; box-sizing: border-box; }
         .ad-banner-img:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
         .ad-content { position: relative; z-index: 2; padding: 20px; text-align: left; width: 90%; }
         .ad-title { color: #ffffff; font-weight: 800; font-size: 17px; margin-bottom: 6px; line-height: 1.2; }
         .ad-text { font-size: 13px; line-height: 1.3; opacity: 0.9; }
 
-        /* Пошаговая инструкция (Roadmap) */
         .roadmap { margin-top: 35px; }
         .roadmap h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .step-container { display: flex; flex-direction: column; gap: 15px; }
@@ -42,7 +39,6 @@
         .step-text h4 { margin: 0 0 5px 0; font-size: 14px; color: #1f2937; }
         .step-text p { margin: 0; font-size: 13px; color: #4b5563; line-height: 1.4; }
 
-        /* Сетка полезных ссылок (Инструменты) */
         .tools-section { margin-top: 35px; }
         .tools-section h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -51,7 +47,6 @@
         .tool-icon { font-size: 24px; margin-bottom: 8px; }
         .tool-title { font-size: 12px; font-weight: 600; }
 
-        /* FAQ Аккордеон */
         .faq-section { margin-top: 35px; border-top: 2px solid #f3f4f6; padding-top: 25px; }
         .faq-section h3 { font-size: 16px; margin-top: 0; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .faq-item { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
@@ -65,7 +60,6 @@
         .faq-answer a { color: #2563eb; text-decoration: none; }
         .faq-answer a:hover { text-decoration: underline; }
 
-        /* Подвал (Footer) */
         .footer { width: 100%; background: #1f2937; color: #9ca3af; text-align: center; padding: 25px 20px; font-size: 12px; box-sizing: border-box; }
         .footer p { margin: 5px 0; }
         .footer a { color: #d1d5db; text-decoration: none; }
@@ -121,7 +115,6 @@
                 <div class="result-value" id="biz-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР СБЕРБАНКА -->
             <a href="https://advt.pro/product/ProductId~01M2FX3MFX0F2T22W3WJEKV6EA!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu&partners=%5B%22%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%22%5D" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #10a340 0%, #046b28 100%);">
                <div class="ad-content">
                    <div class="ad-title">💼 Открыть счет для бизнеса в Сбербанке</div>
@@ -131,7 +124,7 @@
 
             <!-- ДОРОЖНАЯ КАРТА БИЗНЕСА -->
             <div class="roadmap">
-                <h3>Что делать дальше?</h3>
+                <h3>Как оплатить налоги?</h3>
                 <div class="step-container">
                     <div class="step">
                         <div class="step-num">1</div>
@@ -157,7 +150,6 @@
                 </div>
             </div>
 
-            <!-- ПОЛЕЗНЫЕ ССЫЛКИ БИЗНЕС -->
             <div class="tools-section">
                 <h3>Государственные сервисы</h3>
                 <div class="tools-grid">
@@ -172,7 +164,6 @@
                 </div>
             </div>
 
-            <!-- FAQ БИЗНЕС -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
@@ -189,7 +180,7 @@
         <!-- ВКЛАДКА: ДЛЯ ЛЮДЕЙ -->
         <div id="people" class="content">
             <label>Категория налогового вычета:</label>
-            <select id="deduction-type" onchange="calcPeople()">
+            <select id="deduction-type" onchange="switchDeductionType()">
                 <option value="health">Лечение, обучение или спорт (максимум 150 000 ₽)</option>
                 <option value="property">Покупка квартиры или дома (максимум 2 000 000 ₽)</option>
                 <option value="mortgage">Проценты по ипотеке (максимум 3 000 000 ₽)</option>
@@ -204,7 +195,6 @@
                 <div class="result-value" id="people-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР Т-БАНКА -->
             <a href="https://advt.pro/product/ProductId~01H9G8FCP7SYZA60FZ8WAM4YFM!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?erid=2SDnjceLkuJ" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 60%), linear-gradient(135deg, #2b2b2b 0%, #000000 100%); border-left: 5px solid #fed62e;">
                <div class="ad-content">
                    <div class="ad-title">💳 Карта для получения вычета</div>
@@ -212,10 +202,12 @@
                </div>
             </a>
 
-            <!-- ДОРОЖНАЯ КАРТА ЛЮДИ -->
+            <!-- ДИНАМИЧЕСКАЯ ДОРОЖНАЯ КАРТА ЛЮДИ -->
             <div class="roadmap">
-                <h3>Как забрать свои деньги?</h3>
-                <div class="step-container">
+                <h3>Как получить налоговый вычет?</h3>
+                
+                <!-- Шаги для Лечения/Обучения/Спорта -->
+                <div id="roadmap-health" class="step-container" style="display: flex;">
                     <div class="step">
                         <div class="step-num">1</div>
                         <div class="step-text">
@@ -234,13 +226,87 @@
                         <div class="step-num">3</div>
                         <div class="step-text">
                             <h4>Получите перевод</h4>
-                            <p>Укажите банковские реквизиты вашей карты. После проверки инспектором (занимает до 3 месяцев) деньги поступят на ваш счет.</p>
+                            <p>Укажите банковские реквизиты вашей карты. После проверки инспектором деньги поступят на ваш счет.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаги для Покупки квартиры -->
+                <div id="roadmap-property" class="step-container" style="display: none;">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>Соберите документы на жилье</h4>
+                            <p>Подготовьте договор купли-продажи, выписку из Единого государственного реестра недвижимости и банковские чеки об оплате.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>Подайте декларацию</h4>
+                            <p>В Личном кабинете налогоплательщика заполните декларацию 3-НДФЛ онлайн и прикрепите сканы собранных документов.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>Дождитесь выплаты</h4>
+                            <p>После камеральной проверки (которая длится до 3 месяцев) налоговая служба переведет всю сумму по указанным вами реквизитам.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаги для Ипотеки -->
+                <div id="roadmap-mortgage" class="step-container" style="display: none;">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>Закажите справку в банке</h4>
+                            <p>В мобильном приложении вашего банка закажите справку об уплаченных процентах по ипотеке за прошедший год.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>Оформите заявление</h4>
+                            <p>В Личном кабинете налогоплательщика подайте декларацию 3-НДФЛ, прикрепив справку из банка и ваш кредитный договор.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>Получите возврат на карту</h4>
+                            <p>Федеральная налоговая служба проверит документы и перечислит 13% от уплаченных банку процентов на ваш счет.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Шаги для ИИС -->
+                <div id="roadmap-iis" class="step-container" style="display: none;">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>Получите документы от брокера</h4>
+                            <p>Скачайте в приложении вашего брокера договор на ведение Инвестиционного счета и выписку о зачислении денежных средств.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>Оформите вычет онлайн</h4>
+                            <p>Зайдите в Личный кабинет на сайте налоговой службы, перейдите в раздел вычетов и прикрепите документы от брокера.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>Получите деньги</h4>
+                            <p>После стандартной проверки налоговая вернет вам 13% от суммы пополнения счета на вашу банковскую карту.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ПОЛЕЗНЫЕ ССЫЛКИ ЛЮДИ -->
             <div class="tools-section">
                 <h3>Полезные порталы</h3>
                 <div class="tools-grid">
@@ -255,7 +321,6 @@
                 </div>
             </div>
 
-            <!-- FAQ ЛЮДИ -->
             <div class="faq-section">
                 <h3>База знаний по документам</h3>
                 <div class="faq-item">
@@ -296,7 +361,6 @@
                 <div class="result-value" id="savings-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР ФИНУСЛУГ -->
             <a href="https://advt.pro/product/ProductId~01HXRFF2RD0Y84W6CYNRM5BX31!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #ed2129 0%, #990c12 100%);">
                <div class="ad-content">
                    <div class="ad-title">📈 Максимальные ставки на Финуслугах</div>
@@ -306,7 +370,7 @@
 
             <!-- ДОРОЖНАЯ КАРТА СБЕРЕЖЕНИЙ -->
             <div class="roadmap">
-                <h3>Как это работает?</h3>
+                <h3>Как оплатить налог на вклады?</h3>
                 <div class="step-container">
                     <div class="step">
                         <div class="step-num">1</div>
@@ -332,7 +396,6 @@
                 </div>
             </div>
 
-            <!-- FAQ СБЕРЕЖЕНИЯ -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
@@ -348,7 +411,6 @@
     </div>
 </div>
 
-<!-- ПОДВАЛ САЙТА (FOOTER) -->
 <footer class="footer">
     <p>© 2026 Универсальный Налоговый Хаб. Сервис для быстрого финансового планирования.</p>
     <p>Все расчеты носят исключительно информационный характер и не являются публичной офертой.</p>
@@ -379,6 +441,18 @@
             parent.classList.add('active');
         }
     }
+
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('focus', function() {
+            if (this.value === '0') this.value = '';
+        });
+        input.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.value = '0';
+                this.dispatchEvent(new Event('input'));
+            }
+        });
+    });
 
     function switchBizType() {
         let type = document.getElementById('biz-type').value;
@@ -418,6 +492,15 @@
         }
 
         document.getElementById('biz-result').innerText = Math.round(result).toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function switchDeductionType() {
+        let type = document.getElementById('deduction-type').value;
+        document.getElementById('roadmap-health').style.display = type === 'health' ? 'flex' : 'none';
+        document.getElementById('roadmap-property').style.display = type === 'property' ? 'flex' : 'none';
+        document.getElementById('roadmap-mortgage').style.display = type === 'mortgage' ? 'flex' : 'none';
+        document.getElementById('roadmap-iis').style.display = type === 'iis' ? 'flex' : 'none';
+        calcPeople();
     }
 
     function calcPeople() {
