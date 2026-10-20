@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Универсальный Налоговый Хаб</title>
+    <title>Универсальный Налоговый Хаб | Калькулятор налогов и вычетов</title>
     <style>
         body { font-family: system-ui, -apple-system, sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 20px; display: flex; justify-content: center; }
         .container { background: white; max-width: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; }
@@ -22,44 +22,24 @@
         .hint { font-size: 12px; color: #6b7280; margin-top: -10px; margin-bottom: 15px; display: block; }
         .sub-fields { display: none; padding: 10px; background: #f9fafb; border-radius: 6px; border: 1px solid #e5e7eb; margin-bottom: 15px; }
         
-        /* СТИЛИ ДЛЯ БРЕНДОВЫХ БАННЕРОВ */
-        .ad-banner-img {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 140px;
-            margin-top: 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-sizing: border-box;
-        }
-        .ad-banner-img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-        .ad-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-            text-align: left;
-            width: 90%;
-        }
-        .ad-title {
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 17px;
-            margin-bottom: 6px;
-            line-height: 1.2;
-        }
-        .ad-text {
-            font-size: 13px;
-            line-height: 1.3;
-            opacity: 0.9;
-        }
+        /* БРЕНДОВЫЕ БАННЕРЫ */
+        .ad-banner-img { position: relative; display: flex; align-items: center; width: 100%; height: 140px; margin-top: 25px; border-radius: 12px; text-decoration: none; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+        .ad-banner-img:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+        .ad-content { position: relative; z-index: 2; padding: 20px; text-align: left; width: 90%; }
+        .ad-title { color: #ffffff; font-weight: 800; font-size: 17px; margin-bottom: 6px; line-height: 1.2; }
+        .ad-text { font-size: 13px; line-height: 1.3; opacity: 0.9; }
+
+        /* ИНФОРМАЦИОННЫЙ БЛОК (FAQ) */
+        .faq-section { margin-top: 30px; border-top: 2px solid #f3f4f6; padding-top: 20px; }
+        .faq-section h3 { font-size: 16px; margin-top: 0; margin-bottom: 15px; color: #374151; }
+        .faq-item { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { background: #f9fafb; padding: 12px 15px; font-weight: 600; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin: 0; transition: background 0.2s; }
+        .faq-question:hover { background: #f3f4f6; }
+        .faq-answer { padding: 0 15px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; font-size: 13px; line-height: 1.5; color: #4b5563; background: white; }
+        .faq-item.active .faq-answer { padding: 15px; max-height: 500px; border-top: 1px solid #e5e7eb; }
+        .faq-icon { font-size: 18px; line-height: 1; transition: transform 0.3s; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-answer ul { margin: 5px 0; padding-left: 20px; }
     </style>
 </head>
 <body>
@@ -110,15 +90,30 @@
             <div class="result-value" id="biz-result">0 ₽</div>
         </div>
 
-        <!-- Баннер Сбербанка (Зеленый градиент) -->
-        <a href="https://advt.pro/product/ProductId~01M2FX3MFX0F2T22W3WJEKV6EA!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu&partners=%5B%22%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%22%5D" 
-           target="_blank" class="ad-banner-img" 
-           style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #10a340 0%, #046b28 100%);">
+        <!-- Баннер Сбербанка -->
+        <a href="https://advt.pro/product/ProductId~01M2FX3MFX0F2T22W3WJEKV6EA!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu&partners=%5B%22%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%22%5D" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #10a340 0%, #046b28 100%);">
            <div class="ad-content">
                <div class="ad-title">💼 Открыть счет для бизнеса в Сбербанке</div>
                <div class="ad-text" style="color: #e6ffe6;">Бесплатное обслуживание, надежность и сервисы для бизнеса в подарок. Жмите здесь!</div>
            </div>
         </a>
+
+        <!-- FAQ Бизнес -->
+        <div class="faq-section">
+            <h3>Полезная информация для бизнеса</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Как и куда платить налог НПД? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Для самозанятых весь процесс автоматизирован. Налог рассчитывается до 12 числа следующего месяца. Оплатить его нужно <b>до 28 числа</b> месяца, следующего за отчетным, прямо в приложении «Мой налог» с привязанной банковской карты. Никаких деклараций подавать не нужно.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Как платить налоги ИП на УСН? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">С 2023 года все налоги перечисляются на <b>Единый налоговый счет (ЕНС)</b>. Пополнить ЕНС можно через личный кабинет на сайте ФНС или в приложении вашего банка для бизнеса. <br><br><b>Сроки уплаты авансовых платежей:</b><br>За 1 квартал — до 28 апреля.<br>За полугодие — до 28 июля.<br>За 9 месяцев — до 28 октября.<br>Итоговый налог за год — до 28 апреля следующего года.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Сроки оплаты фиксированных взносов ИП <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Взносы «за себя» (в 2026 году это 57 390 рублей) необходимо оплатить <b>до 31 декабря</b> текущего года. Дополнительный взнос 1% с дохода свыше 300 000 рублей уплачивается <b>до 1 июля</b> следующего года. Их также нужно зачислять на ваш ЕНС.</div>
+            </div>
+        </div>
     </div>
 
     <!-- Вкладка: Для людей -->
@@ -139,15 +134,30 @@
             <div class="result-value" id="people-result">0 ₽</div>
         </div>
 
-        <!-- Баннер Т-Банка (Черный с желтым акцентом) -->
-        <a href="https://advt.pro/product/ProductId~01H9G8FCP7SYZA60FZ8WAM4YFM!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?erid=2SDnjceLkuJ" 
-           target="_blank" class="ad-banner-img" 
-           style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 60%), linear-gradient(135deg, #2b2b2b 0%, #000000 100%); border-left: 5px solid #fed62e;">
+        <!-- Баннер Т-Банка -->
+        <a href="https://advt.pro/product/ProductId~01H9G8FCP7SYZA60FZ8WAM4YFM!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?erid=2SDnjceLkuJ" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 60%), linear-gradient(135deg, #2b2b2b 0%, #000000 100%); border-left: 5px solid #fed62e;">
            <div class="ad-content">
                <div class="ad-title">💳 Дебетовая карта Т-Банк Black</div>
                <div class="ad-text" style="color: #cccccc;">Возвращайте деньги за покупки каждый месяц. Бесплатное обслуживание навсегда.</div>
            </div>
         </a>
+
+        <!-- FAQ Люди -->
+        <div class="faq-section">
+            <h3>Полезная информация по вычетам</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Где и как оформить налоговый вычет? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Самый быстрый и удобный способ — через <b>Личный кабинет налогоплательщика</b> на сайте ФНС России. Там необходимо заполнить декларацию 3-НДФЛ онлайн и прикрепить фото или сканы подтверждающих документов. Электронная подпись генерируется там же бесплатно.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Документы для вычета за лечение и спорт <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><b>Вам понадобятся:</b><ul><li>Договор на оказание медицинских/фитнес услуг.</li><li>Копия лицензии клиники или спортивного клуба.</li><li>Справка об оплате медицинских услуг (для налоговой).</li><li>Справка 2-НДФЛ с работы (если данные еще не подгрузились в кабинет ФНС автоматически).</li></ul></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Документы для вычета за покупку квартиры <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><b>Базовый список:</b><ul><li>Договор купли-продажи или договор долевого участия (ДДУ).</li><li>Выписка из ЕГРН, подтверждающая право собственности.</li><li>Акт приема-передачи (при покупке в новостройке).</li><li>Платежные документы (чеки, квитанции, выписки о переводе средств продавцу).</li><li>Кредитный договор и справка об уплаченных процентах из банка (для вычета по ипотеке).</li></ul></div>
+            </div>
+        </div>
     </div>
 
     <!-- Вкладка: Для сбережений -->
@@ -169,15 +179,30 @@
             <div class="result-value" id="savings-result">0 ₽</div>
         </div>
 
-        <!-- Баннер Финуслуг (Красный градиент) -->
-        <a href="https://advt.pro/product/ProductId~01HXRFF2RD0Y84W6CYNRM5BX31!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu" 
-           target="_blank" class="ad-banner-img" 
-           style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #ed2129 0%, #990c12 100%);">
+        <!-- Баннер Финуслуг -->
+        <a href="https://advt.pro/product/ProductId~01HXRFF2RD0Y84W6CYNRM5BX31!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #ed2129 0%, #990c12 100%);">
            <div class="ad-content">
                <div class="ad-title">📈 Максимальные ставки на Финуслугах</div>
                <div class="ad-text" style="color: #ffe6e6;">Сравните предложения топовых банков и откройте вклад онлайн без визита в офис.</div>
            </div>
         </a>
+
+        <!-- FAQ Сбережения -->
+        <div class="faq-section">
+            <h3>Полезная информация по налогу на вклады</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Нужно ли подавать декларацию в налоговую? <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><b>Нет.</b> Самостоятельно рассчитывать налог и подавать декларацию 3-НДФЛ не требуется. Банки сами передают информацию о выплаченных вам процентах в ФНС до 1 февраля следующего года.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Когда и как платить налог на вклады? <span class="faq-icon">+</span></div>
+                <div class="faq-answer">Налоговая сама сформирует сводное уведомление и пришлет его вам в Личный кабинет на сайте ФНС или на Госуслугах осенью (вместе с налогами на квартиру и машину). Оплатить выставленный налог необходимо <b>до 1 декабря</b> года, следующего за тем, в котором вы получили процентный доход.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Учитываются ли валютные вклады? <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><b>Да.</b> Проценты по валютным вкладам пересчитываются в рубли по официальному курсу ЦБ РФ на день фактического получения дохода и суммируются с остальными рублевыми процентами. Изменение курсовой стоимости самой валюты налогом не облагается.</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -191,6 +216,18 @@
         
         document.getElementById(tabName).classList.add("active");
         evt.currentTarget.classList.add("active");
+    }
+
+    // Скрипт для работы аккордеона FAQ
+    function toggleFaq(element) {
+        let parent = element.parentElement;
+        if (parent.classList.contains('active')) {
+            parent.classList.remove('active');
+        } else {
+            let allFaqs = document.getElementsByClassName('faq-item');
+            for (let i = 0; i < allFaqs.length; i++) allFaqs[i].classList.remove('active');
+            parent.classList.add('active');
+        }
     }
 
     function switchBizType() {
@@ -215,21 +252,17 @@
             let fixedInsurance = 57390; 
             let extraInsurance = income > 300000 ? Math.min((income - 300000) * 0.01, 321818) : 0;
             let totalInsurance = fixedInsurance + extraInsurance;
-            
             let taxToPay = Math.max(0, tax - totalInsurance); 
             result = taxToPay + totalInsurance; 
         } else if (type === 'usn15') {
             let income = Number(document.getElementById('biz-usn15-income').value) || 0;
             let expense = Number(document.getElementById('biz-usn15-expense').value) || 0;
-            
             let fixedInsurance = 57390;
             let extraInsurance = income > 300000 ? Math.min((income - 300000) * 0.01, 321818) : 0;
             let totalInsurance = fixedInsurance + extraInsurance;
-
             let profit = Math.max(0, income - (expense + totalInsurance));
             let tax = profit * 0.15;
             let minTax = income * 0.01;
-            
             let taxToPay = Math.max(tax, minTax);
             result = taxToPay + totalInsurance;
         }
@@ -258,10 +291,8 @@
         let income = Number(document.getElementById('savings-income').value) || 0;
         let rate = Number(document.getElementById('savings-rate').value) || 16;
         let isRich = document.getElementById('savings-rich').checked;
-        
         let freeBase = 1000000 * (rate / 100);
         document.getElementById('savings-freebase').innerText = 'Необлагаемая база: ' + Math.round(freeBase).toLocaleString('ru-RU') + ' ₽';
-        
         let tax = 0;
         if (income > freeBase) {
             tax = (income - freeBase) * (isRich ? 0.15 : 0.13);
