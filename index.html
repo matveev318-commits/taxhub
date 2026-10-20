@@ -15,6 +15,7 @@
         .content { padding: 25px; display: none; }
         .content.active { display: block; }
         
+        /* Формы и расчеты */
         label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; color: #374151; }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; font-size: 16px; background: #f9fafb; transition: border-color 0.2s; }
         input:focus, select:focus { border-color: #2563eb; outline: none; background: #ffffff; }
@@ -25,12 +26,14 @@
         .hint { font-size: 12px; color: #6b7280; margin-top: -10px; margin-bottom: 15px; display: block; }
         .sub-fields { display: none; padding: 15px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 15px; }
         
+        /* Брендовые баннеры */
         .ad-banner-img { position: relative; display: flex; align-items: center; width: 100%; height: 140px; margin-top: 25px; border-radius: 12px; text-decoration: none; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; box-sizing: border-box; }
         .ad-banner-img:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
         .ad-content { position: relative; z-index: 2; padding: 20px; text-align: left; width: 90%; }
         .ad-title { color: #ffffff; font-weight: 800; font-size: 17px; margin-bottom: 6px; line-height: 1.2; }
         .ad-text { font-size: 13px; line-height: 1.3; opacity: 0.9; }
 
+        /* Пошаговая инструкция (Roadmap) */
         .roadmap { margin-top: 35px; }
         .roadmap h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .step-container { display: flex; flex-direction: column; gap: 15px; }
@@ -39,6 +42,7 @@
         .step-text h4 { margin: 0 0 5px 0; font-size: 14px; color: #1f2937; }
         .step-text p { margin: 0; font-size: 13px; color: #4b5563; line-height: 1.4; }
 
+        /* Сетка полезных ссылок (Инструменты) */
         .tools-section { margin-top: 35px; }
         .tools-section h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -47,19 +51,21 @@
         .tool-icon { font-size: 24px; margin-bottom: 8px; }
         .tool-title { font-size: 12px; font-weight: 600; }
 
+        /* FAQ Аккордеон */
         .faq-section { margin-top: 35px; border-top: 2px solid #f3f4f6; padding-top: 25px; }
         .faq-section h3 { font-size: 16px; margin-top: 0; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .faq-item { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
         .faq-question { background: #f9fafb; padding: 14px 15px; font-weight: 600; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin: 0; transition: background 0.2s; }
         .faq-question:hover { background: #f3f4f6; }
         .faq-answer { padding: 0 15px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; font-size: 13px; line-height: 1.5; color: #4b5563; background: white; }
-        .faq-item.active .faq-answer { padding: 15px; max-height: 600px; border-top: 1px solid #e5e7eb; }
+        .faq-item.active .faq-answer { padding: 15px; max-height: 800px; border-top: 1px solid #e5e7eb; }
         .faq-icon { font-size: 18px; line-height: 1; transition: transform 0.3s; color: #9ca3af; }
         .faq-item.active .faq-icon { transform: rotate(45deg); color: #2563eb; }
         .faq-answer ul { margin: 5px 0; padding-left: 20px; }
         .faq-answer a { color: #2563eb; text-decoration: none; }
         .faq-answer a:hover { text-decoration: underline; }
 
+        /* Подвал (Footer) */
         .footer { width: 100%; background: #1f2937; color: #9ca3af; text-align: center; padding: 25px 20px; font-size: 12px; box-sizing: border-box; }
         .footer p { margin: 5px 0; }
         .footer a { color: #d1d5db; text-decoration: none; }
@@ -81,25 +87,26 @@
             <button class="tab-btn" onclick="switchTab(event, 'savings')">Для сбережений</button>
         </div>
 
+        <!-- ВКЛАДКА: ДЛЯ БИЗНЕСА -->
         <div id="business" class="content active">
             <label>Выберите вашу систему налогообложения:</label>
             <select id="biz-type" onchange="switchBizType()">
-                <option value="npd">Самозанятый (НПД)</option>
-                <option value="usn6">ИП на УСН 6% (Доходы)</option>
-                <option value="usn15">ИП на УСН 15% (Доходы - Расходы)</option>
+                <option value="npd">Самозанятый (Налог на профессиональный доход)</option>
+                <option value="usn6">Индивидуальный предприниматель на Упрощенной системе (6% Доходы)</option>
+                <option value="usn15">Индивидуальный предприниматель на Упрощенной системе (15% Доходы минус Расходы)</option>
             </select>
 
             <div id="biz-npd-fields" class="sub-fields" style="display: block;">
-                <label>Поступления от физлиц (руб):</label>
+                <label>Поступления от физических лиц (руб):</label>
                 <input type="number" id="biz-fiz" value="0" oninput="calcBusiness()">
-                <label>Поступления от юрлиц (руб):</label>
+                <label>Поступления от юридических лиц (руб):</label>
                 <input type="number" id="biz-ur" value="0" oninput="calcBusiness()">
             </div>
 
             <div id="biz-usn6-fields" class="sub-fields">
                 <label>Прогнозируемый доход за год (руб):</label>
                 <input type="number" id="biz-usn6-income" value="0" oninput="calcBusiness()">
-                <span class="hint">*Автоматически вычитаем фиксированные взносы ИП (57 390 ₽)</span>
+                <span class="hint">*Автоматически вычитаем обязательные фиксированные взносы (57 390 ₽)</span>
             </div>
 
             <div id="biz-usn15-fields" class="sub-fields">
@@ -114,6 +121,7 @@
                 <div class="result-value" id="biz-result">0 ₽</div>
             </div>
 
+            <!-- БАННЕР СБЕРБАНКА -->
             <a href="https://advt.pro/product/ProductId~01M2FX3MFX0F2T22W3WJEKV6EA!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu&partners=%5B%22%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%22%5D" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #10a340 0%, #046b28 100%);">
                <div class="ad-content">
                    <div class="ad-title">💼 Открыть счет для бизнеса в Сбербанке</div>
@@ -121,6 +129,7 @@
                </div>
             </a>
 
+            <!-- ДОРОЖНАЯ КАРТА БИЗНЕСА -->
             <div class="roadmap">
                 <h3>Что делать дальше?</h3>
                 <div class="step-container">
@@ -128,7 +137,7 @@
                         <div class="step-num">1</div>
                         <div class="step-text">
                             <h4>Откройте расчетный счет</h4>
-                            <p>Для приема оплат вам потребуется счет ИП. По кнопке выше вы можете открыть его в Сбербанке онлайн без визита в офис.</p>
+                            <p>Для приема оплат вам потребуется счет индивидуального предпринимателя. По кнопке выше вы можете открыть его в Сбербанке онлайн без визита в офис.</p>
                         </div>
                     </div>
                     <div class="step">
@@ -141,13 +150,14 @@
                     <div class="step">
                         <div class="step-num">3</div>
                         <div class="step-text">
-                            <h4>Пополняйте ЕНС</h4>
-                            <p>Закидывайте деньги на Единый налоговый счет через приложение банка, а ФНС сама спишет их в день платежа.</p>
+                            <h4>Пополняйте Единый налоговый счет</h4>
+                            <p>Переводите деньги на ваш единый налоговый счет через приложение банка, а налоговая инспекция сама спишет их в день платежа.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ПОЛЕЗНЫЕ ССЫЛКИ БИЗНЕС -->
             <div class="tools-section">
                 <h3>Государственные сервисы</h3>
                 <div class="tools-grid">
@@ -157,31 +167,33 @@
                     </a>
                     <a href="https://lkip2.nalog.ru/" target="_blank" class="tool-card">
                         <div class="tool-icon">🏛️</div>
-                        <div class="tool-title">Кабинет ИП<br>(Сайт ФНС)</div>
+                        <div class="tool-title">Личный Кабинет<br>Предпринимателя</div>
                     </a>
                 </div>
             </div>
 
+            <!-- FAQ БИЗНЕС -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">Как и куда платить налог НПД? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer">Для самозанятых процесс автоматизирован. Налог рассчитывается до 12 числа следующего месяца. Оплатить его нужно <b>до 28 числа</b> прямо в приложении «Мой налог» с привязанной карты. Никаких деклараций подавать не нужно.</div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Как платить Налог на профессиональный доход? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Для самозанятых процесс автоматизирован. Налог рассчитывается до 12 числа следующего месяца. Оплатить его нужно <b>до 28 числа</b> прямо в приложении «Мой налог» с привязанной банковской карты. Никаких налоговых деклараций подавать не нужно.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">Как платить налоги ИП на УСН? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer">С 2023 года все налоги перечисляются на <b>Единый налоговый счет (ЕНС)</b>. Пополнить его можно через личный кабинет ФНС или в приложении вашего банка.<br><br><b>Авансовые платежи:</b> до 28 апреля, 28 июля, 28 октября.<br><b>Итоговый налог:</b> до 28 апреля следующего года.</div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Как платить налоги на Упрощенной системе? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">С 2023 года все налоги перечисляются на <b>Единый налоговый счет</b>. Пополнить его можно через личный кабинет Федеральной налоговой службы или в приложении вашего банка.<br><br><b>Авансовые платежи:</b> до 28 апреля, 28 июля, 28 октября.<br><b>Итоговый налог:</b> до 28 апреля следующего года.</div>
                 </div>
             </div>
         </div>
 
+        <!-- ВКЛАДКА: ДЛЯ ЛЮДЕЙ -->
         <div id="people" class="content">
             <label>Категория налогового вычета:</label>
             <select id="deduction-type" onchange="calcPeople()">
-                <option value="health">Лечение, обучение или спорт (макс 150 000 ₽)</option>
-                <option value="property">Покупка квартиры/дома (макс 2 000 000 ₽)</option>
-                <option value="mortgage">Проценты по ипотеке (макс 3 000 000 ₽)</option>
-                <option value="iis">Пополнение ИИС (макс 400 000 ₽)</option>
+                <option value="health">Лечение, обучение или спорт (максимум 150 000 ₽)</option>
+                <option value="property">Покупка квартиры или дома (максимум 2 000 000 ₽)</option>
+                <option value="mortgage">Проценты по ипотеке (максимум 3 000 000 ₽)</option>
+                <option value="iis">Пополнение Индивидуального инвестиционного счета (максимум 400 000 ₽)</option>
             </select>
 
             <label>Сумма, которую вы потратили за год (руб):</label>
@@ -192,13 +204,15 @@
                 <div class="result-value" id="people-result">0 ₽</div>
             </div>
 
+            <!-- БАННЕР Т-БАНКА -->
             <a href="https://advt.pro/product/ProductId~01H9G8FCP7SYZA60FZ8WAM4YFM!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?erid=2SDnjceLkuJ" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 60%), linear-gradient(135deg, #2b2b2b 0%, #000000 100%); border-left: 5px solid #fed62e;">
                <div class="ad-content">
                    <div class="ad-title">💳 Карта для получения вычета</div>
-                   <div class="ad-text" style="color: #cccccc;">Укажите реквизиты Т-Банк Black для быстрого зачисления от ФНС + кэшбэк на всё.</div>
+                   <div class="ad-text" style="color: #cccccc;">Укажите реквизиты Т-Банк Black для быстрого зачисления денег от налоговой службы.</div>
                </div>
             </a>
 
+            <!-- ДОРОЖНАЯ КАРТА ЛЮДИ -->
             <div class="roadmap">
                 <h3>Как забрать свои деньги?</h3>
                 <div class="step-container">
@@ -206,55 +220,66 @@
                         <div class="step-num">1</div>
                         <div class="step-text">
                             <h4>Подготовьте справки</h4>
-                            <p>Возьмите у клиники, автошколы или спортзала договор и специальную "Справку для налоговой".</p>
+                            <p>Возьмите у клиники, автошколы или спортивного зала договор и специальную «Справку об оплате услуг для налоговой».</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">2</div>
                         <div class="step-text">
-                            <h4>Отправьте в ФНС</h4>
-                            <p>Зайдите в Личный кабинет ФНС, выберите «Получить вычет» и загрузите фото ваших справок.</p>
+                            <h4>Отправьте документы в налоговую</h4>
+                            <p>Зайдите в Личный кабинет Федеральной налоговой службы, выберите раздел «Получить вычет» и загрузите фотографии ваших справок.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">3</div>
                         <div class="step-text">
                             <h4>Получите перевод</h4>
-                            <p>Укажите реквизиты вашей карты. После камеральной проверки (до 3 месяцев) деньги поступят на счет.</p>
+                            <p>Укажите банковские реквизиты вашей карты. После проверки инспектором (занимает до 3 месяцев) деньги поступят на ваш счет.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ПОЛЕЗНЫЕ ССЫЛКИ ЛЮДИ -->
             <div class="tools-section">
                 <h3>Полезные порталы</h3>
                 <div class="tools-grid">
                     <a href="https://lkfl2.nalog.ru/" target="_blank" class="tool-card">
                         <div class="tool-icon">👤</div>
-                        <div class="tool-title">Кабинет Физлица<br>(Подача 3-НДФЛ)</div>
+                        <div class="tool-title">Кабинет Физического Лица<br>(Подача декларации)</div>
                     </a>
                     <a href="https://www.gosuslugi.ru/" target="_blank" class="tool-card">
                         <div class="tool-icon">🇷🇺</div>
-                        <div class="tool-title">Портал<br>Госуслуги</div>
+                        <div class="tool-title">Государственные<br>Услуги</div>
                     </a>
                 </div>
             </div>
 
+            <!-- FAQ ЛЮДИ -->
             <div class="faq-section">
-                <h3>База знаний</h3>
+                <h3>База знаний по документам</h3>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">Обязательна ли справка 2-НДФЛ? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer">Справка нужна, чтобы подтвердить, что вы платили налоги. Но сейчас данные от работодателей подгружаются в Личный кабинет ФНС автоматически к концу февраля. Если данные загрузились, брать бумажную справку не нужно.</div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Обязательна ли справка о доходах с работы? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Справка о доходах (бывшая форма 2-НДФЛ) нужна, чтобы подтвердить сумму уплаченных вами налогов. Но сейчас данные от работодателей подгружаются в Личный кабинет Федеральной налоговой службы автоматически к концу февраля каждого года. Если ваши данные уже загрузились, брать бумажную справку в бухгалтерии не нужно.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">Документы для вычета за квартиру <span class="faq-icon">+</span></div>
-                    <div class="faq-answer"><b>Список для загрузки в ФНС:</b><ul><li>Договор купли-продажи (или ДДУ).</li><li>Выписка из ЕГРН или Акт приема-передачи.</li><li>Чеки, квитанции, выписки о переводе.</li><li>Кредитный договор (если была ипотека).</li></ul></div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Документы для вычета за покупку квартиры <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><b>Список для загрузки на сайт налоговой службы:</b><ul><li>Договор купли-продажи (или Договор участия в долевом строительстве).</li><li>Выписка из Единого государственного реестра недвижимости или Акт приема-передачи квартиры.</li><li>Чеки, квитанции, выписки о банковском переводе продавцу.</li></ul></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Документы для вычета по процентам ипотеки <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><b>Вам понадобятся:</b><ul><li>Кредитный договор с вашим банком.</li><li>График платежей по кредиту.</li><li>Справка из банка об уплаченных процентах за год (ее можно быстро скачать в мобильном приложении вашего банка без визита в отделение).</li></ul></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Документы для Индивидуального инвестиционного счета <span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><b>Вам понадобятся:</b><ul><li>Договор с брокером на ведение Индивидуального инвестиционного счета.</li><li>Документы, подтверждающие факт зачисления ваших денег на этот счет (банковские выписки или платежные поручения о переводе средств).</li></ul></div>
                 </div>
             </div>
         </div>
 
+        <!-- ВКЛАДКА: ДЛЯ СБЕРЕЖЕНИЙ -->
         <div id="savings" class="content">
-            <label>Максимальная ключевая ставка ЦБ в году (%):</label>
+            <label>Максимальная ключевая ставка Центрального банка в году (%):</label>
             <input type="number" id="savings-rate" value="16" step="0.5" oninput="calcSavings()">
             
             <label>Сумма начисленных процентов по всем банкам (руб):</label>
@@ -262,22 +287,24 @@
 
             <div class="checkbox-wrapper">
                 <input type="checkbox" id="savings-rich" onchange="calcSavings()">
-                <label style="margin:0;">Мой годовой доход (зарплата + вклады) > 2.4 млн ₽</label>
+                <label style="margin:0;">Мой годовой доход (зарплата + проценты) больше 2.4 млн ₽</label>
             </div>
-            <span class="hint" id="savings-freebase">Необлагаемая база: 160 000 ₽</span>
+            <span class="hint" id="savings-freebase">Необлагаемая сумма: 160 000 ₽</span>
 
             <div class="result-box">
-                Налог на вклады к уплате:
+                Налог на доходы к уплате:
                 <div class="result-value" id="savings-result">0 ₽</div>
             </div>
 
+            <!-- БАННЕР ФИНУСЛУГ -->
             <a href="https://advt.pro/product/ProductId~01HXRFF2RD0Y84W6CYNRM5BX31!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #ed2129 0%, #990c12 100%);">
                <div class="ad-content">
                    <div class="ad-title">📈 Максимальные ставки на Финуслугах</div>
-                   <div class="ad-text" style="color: #ffe6e6;">Сравните вклады от всех банков РФ в одном окне. Открытие онлайн без визита в офис.</div>
+                   <div class="ad-text" style="color: #ffe6e6;">Сравните вклады от всех банков России в одном окне. Открытие онлайн без визита в офис.</div>
                </div>
             </a>
 
+            <!-- ДОРОЖНАЯ КАРТА СБЕРЕЖЕНИЙ -->
             <div class="roadmap">
                 <h3>Как это работает?</h3>
                 <div class="step-container">
@@ -285,46 +312,48 @@
                         <div class="step-num">1</div>
                         <div class="step-text">
                             <h4>Вы ничего не считаете</h4>
-                            <p>Вам не нужно подавать декларации. Все банки самостоятельно отправляют данные о выплаченных вам процентах напрямую в налоговую.</p>
+                            <p>Вам не нужно подавать налоговые декларации самостоятельно. Все банки сами отправляют данные о выплаченных вам процентах напрямую в Федеральную налоговую службу.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">2</div>
                         <div class="step-text">
                             <h4>Ожидайте уведомление</h4>
-                            <p>Осенью в ваш Личный кабинет ФНС и на Госуслуги придет сводное квитанция (вместе с налогом на авто и квартиру).</p>
+                            <p>Осенью в ваш Личный кабинет налогоплательщика и на портал Государственных Услуг придет сводная квитанция (вместе с налогом на автомобиль и недвижимость).</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-num">3</div>
                         <div class="step-text">
                             <h4>Оплатите налог</h4>
-                            <p>Оплатить выставленную сумму необходимо строго до 1 декабря года, следующего за отчетным.</p>
+                            <p>Оплатить выставленную сумму необходимо строго до 1 декабря года, следующего за тем годом, когда вы получили доход.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- FAQ СБЕРЕЖЕНИЯ -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">Как считается необлагаемая база? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer">Сумма в 1 миллион рублей умножается на максимальную ключевую ставку ЦБ РФ, которая действовала на 1-е число любого месяца в этом году. Если ставка была 16%, то налогом не облагаются первые заработанные 160 000 рублей.</div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Как считается сумма, не облагаемая налогом? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Сумма в 1 миллион рублей умножается на максимальную ключевую ставку Центрального банка Российской Федерации, которая действовала на первое число любого месяца в этом году. Например, если максимальная ставка была 16%, то налогом не облагаются первые заработанные 160 000 рублей.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">А если у меня валютные вклады? <span class="faq-icon">+</span></div>
-                    <div class="faq-answer">Проценты по валютным вкладам пересчитываются в рубли по официальному курсу ЦБ на день их зачисления. Изменение стоимости самой валюты (курсовая разница) налогом не облагается. Налог платится только с процентов.</div>
+                    <div class="faq-question" onclick="toggleFaq(this)">Нужно ли платить налог, если вклад в иностранной валюте? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Проценты по валютным вкладам пересчитываются в российские рубли по официальному курсу Центрального банка на день их зачисления на ваш счет. Изменение стоимости самой валюты (курсовая разница) налогом не облагается. Налог платится исключительно с начисленных процентов.</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- ПОДВАЛ САЙТА (FOOTER) -->
 <footer class="footer">
     <p>© 2026 Универсальный Налоговый Хаб. Сервис для быстрого финансового планирования.</p>
-    <p>Все расчеты носят информационный характер и не являются публичной офертой.</p>
+    <p>Все расчеты носят исключительно информационный характер и не являются публичной офертой.</p>
     <p style="margin-top: 10px;">
-        <a href="https://t.me/tuxhub_support" target="_blank">Связаться с поддержкой</a>
+        <a href="https://t.me/tuxhub_support" target="_blank">Связаться с поддержкой сервиса</a>
     </p>
 </footer>
 
@@ -413,7 +442,7 @@
         let rate = Number(document.getElementById('savings-rate').value) || 16;
         let isRich = document.getElementById('savings-rich').checked;
         let freeBase = 1000000 * (rate / 100);
-        document.getElementById('savings-freebase').innerText = 'Необлагаемая база: ' + Math.round(freeBase).toLocaleString('ru-RU') + ' ₽';
+        document.getElementById('savings-freebase').innerText = 'Необлагаемая сумма: ' + Math.round(freeBase).toLocaleString('ru-RU') + ' ₽';
         let tax = 0;
         if (income > freeBase) {
             tax = (income - freeBase) * (isRich ? 0.15 : 0.13);
