@@ -15,7 +15,6 @@
         .content { padding: 25px; display: none; }
         .content.active { display: block; }
         
-        /* Формы и расчеты */
         label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; color: #374151; }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; font-size: 16px; background: #f9fafb; transition: border-color 0.2s; }
         input:focus, select:focus { border-color: #2563eb; outline: none; background: #ffffff; }
@@ -26,14 +25,12 @@
         .hint { font-size: 12px; color: #6b7280; margin-top: -10px; margin-bottom: 15px; display: block; }
         .sub-fields { display: none; padding: 15px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; margin-bottom: 15px; }
         
-        /* Брендовые баннеры */
         .ad-banner-img { position: relative; display: flex; align-items: center; width: 100%; height: 140px; margin-top: 25px; border-radius: 12px; text-decoration: none; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, box-shadow 0.2s; box-sizing: border-box; }
         .ad-banner-img:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
         .ad-content { position: relative; z-index: 2; padding: 20px; text-align: left; width: 90%; }
         .ad-title { color: #ffffff; font-weight: 800; font-size: 17px; margin-bottom: 6px; line-height: 1.2; }
         .ad-text { font-size: 13px; line-height: 1.3; opacity: 0.9; }
 
-        /* Пошаговая инструкция (Roadmap) */
         .roadmap { margin-top: 35px; }
         .roadmap h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .step-container { display: flex; flex-direction: column; gap: 15px; }
@@ -42,7 +39,6 @@
         .step-text h4 { margin: 0 0 5px 0; font-size: 14px; color: #1f2937; }
         .step-text p { margin: 0; font-size: 13px; color: #4b5563; line-height: 1.4; }
 
-        /* Сетка полезных ссылок (Инструменты) */
         .tools-section { margin-top: 35px; }
         .tools-section h3 { font-size: 16px; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -51,7 +47,6 @@
         .tool-icon { font-size: 24px; margin-bottom: 8px; }
         .tool-title { font-size: 12px; font-weight: 600; }
 
-        /* FAQ Аккордеон */
         .faq-section { margin-top: 35px; border-top: 2px solid #f3f4f6; padding-top: 25px; }
         .faq-section h3 { font-size: 16px; margin-top: 0; margin-bottom: 15px; color: #1f2937; text-align: center; }
         .faq-item { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
@@ -65,7 +60,6 @@
         .faq-answer a { color: #2563eb; text-decoration: none; }
         .faq-answer a:hover { text-decoration: underline; }
 
-        /* Подвал (Footer) */
         .footer { width: 100%; background: #1f2937; color: #9ca3af; text-align: center; padding: 25px 20px; font-size: 12px; box-sizing: border-box; }
         .footer p { margin: 5px 0; }
         .footer a { color: #d1d5db; text-decoration: none; }
@@ -87,7 +81,6 @@
             <button class="tab-btn" onclick="switchTab(event, 'savings')">Для сбережений</button>
         </div>
 
-        <!-- ВКЛАДКА: ДЛЯ БИЗНЕСА -->
         <div id="business" class="content active">
             <label>Выберите вашу систему налогообложения:</label>
             <select id="biz-type" onchange="switchBizType()">
@@ -121,7 +114,6 @@
                 <div class="result-value" id="biz-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР СБЕРБАНКА -->
             <a href="https://advt.pro/product/ProductId~01M2FX3MFX0F2T22W3WJEKV6EA!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu&partners=%5B%22%D0%A1%D0%B1%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA%22%5D" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #10a340 0%, #046b28 100%);">
                <div class="ad-content">
                    <div class="ad-title">💼 Открыть счет для бизнеса в Сбербанке</div>
@@ -129,7 +121,6 @@
                </div>
             </a>
 
-            <!-- ДОРОЖНАЯ КАРТА БИЗНЕСА -->
             <div class="roadmap">
                 <h3>Что делать дальше?</h3>
                 <div class="step-container">
@@ -157,7 +148,6 @@
                 </div>
             </div>
 
-            <!-- ПОЛЕЗНЫЕ ССЫЛКИ -->
             <div class="tools-section">
                 <h3>Государственные сервисы</h3>
                 <div class="tools-grid">
@@ -172,7 +162,6 @@
                 </div>
             </div>
 
-            <!-- FAQ -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
@@ -186,7 +175,6 @@
             </div>
         </div>
 
-        <!-- ВКЛАДКА: ДЛЯ ЛЮДЕЙ -->
         <div id="people" class="content">
             <label>Категория налогового вычета:</label>
             <select id="deduction-type" onchange="calcPeople()">
@@ -204,7 +192,6 @@
                 <div class="result-value" id="people-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР Т-БАНКА -->
             <a href="https://advt.pro/product/ProductId~01H9G8FCP7SYZA60FZ8WAM4YFM!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?erid=2SDnjceLkuJ" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 60%), linear-gradient(135deg, #2b2b2b 0%, #000000 100%); border-left: 5px solid #fed62e;">
                <div class="ad-content">
                    <div class="ad-title">💳 Карта для получения вычета</div>
@@ -212,7 +199,6 @@
                </div>
             </a>
 
-            <!-- ДОРОЖНАЯ КАРТА ЛЮДИ -->
             <div class="roadmap">
                 <h3>Как забрать свои деньги?</h3>
                 <div class="step-container">
@@ -240,7 +226,6 @@
                 </div>
             </div>
 
-            <!-- ПОЛЕЗНЫЕ ССЫЛКИ -->
             <div class="tools-section">
                 <h3>Полезные порталы</h3>
                 <div class="tools-grid">
@@ -255,7 +240,6 @@
                 </div>
             </div>
 
-            <!-- FAQ ЛЮДИ -->
             <div class="faq-section">
                 <h3>База знаний</h3>
                 <div class="faq-item">
@@ -269,7 +253,6 @@
             </div>
         </div>
 
-        <!-- ВКЛАДКА: ДЛЯ СБЕРЕЖЕНИЙ -->
         <div id="savings" class="content">
             <label>Максимальная ключевая ставка ЦБ в году (%):</label>
             <input type="number" id="savings-rate" value="16" step="0.5" oninput="calcSavings()">
@@ -288,5 +271,156 @@
                 <div class="result-value" id="savings-result">0 ₽</div>
             </div>
 
-            <!-- БАННЕР ФИНУСЛУГ -->
-            <a href="
+            <a href="https://advt.pro/product/ProductId~01HXRFF2RD0Y84W6CYNRM5BX31!ExecutorId~01M5C0TBMJ5J761R1171YVGG14!UserId~01M5C0TAJG8MB5Y7MP89Y3SBR1!LegacyUserId~6154932?w_source=menu" target="_blank" class="ad-banner-img" style="background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.2) 0%, transparent 60%), linear-gradient(135deg, #ed2129 0%, #990c12 100%);">
+               <div class="ad-content">
+                   <div class="ad-title">📈 Максимальные ставки на Финуслугах</div>
+                   <div class="ad-text" style="color: #ffe6e6;">Сравните вклады от всех банков РФ в одном окне. Открытие онлайн без визита в офис.</div>
+               </div>
+            </a>
+
+            <div class="roadmap">
+                <h3>Как это работает?</h3>
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>Вы ничего не считаете</h4>
+                            <p>Вам не нужно подавать декларации. Все банки самостоятельно отправляют данные о выплаченных вам процентах напрямую в налоговую.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>Ожидайте уведомление</h4>
+                            <p>Осенью в ваш Личный кабинет ФНС и на Госуслуги придет сводное квитанция (вместе с налогом на авто и квартиру).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>Оплатите налог</h4>
+                            <p>Оплатить выставленную сумму необходимо строго до 1 декабря года, следующего за отчетным.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3>База знаний</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Как считается необлагаемая база? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Сумма в 1 миллион рублей умножается на максимальную ключевую ставку ЦБ РФ, которая действовала на 1-е число любого месяца в этом году. Если ставка была 16%, то налогом не облагаются первые заработанные 160 000 рублей.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">А если у меня валютные вклады? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">Проценты по валютным вкладам пересчитываются в рубли по официальному курсу ЦБ на день их зачисления. Изменение стоимости самой валюты (курсовая разница) налогом не облагается. Налог платится только с процентов.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Универсальный Налоговый Хаб. Сервис для быстрого финансового планирования.</p>
+    <p>Все расчеты носят информационный характер и не являются публичной офертой.</p>
+    <p style="margin-top: 10px;">
+        <a href="https://t.me/tuxhub_support" target="_blank">Связаться с поддержкой</a>
+    </p>
+</footer>
+
+<script>
+    function switchTab(evt, tabName) {
+        let contents = document.getElementsByClassName("content");
+        for (let i = 0; i < contents.length; i++) contents[i].classList.remove("active");
+        
+        let btns = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < btns.length; i++) btns[i].classList.remove("active");
+        
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    function toggleFaq(element) {
+        let parent = element.parentElement;
+        if (parent.classList.contains('active')) {
+            parent.classList.remove('active');
+        } else {
+            let allFaqs = document.getElementsByClassName('faq-item');
+            for (let i = 0; i < allFaqs.length; i++) allFaqs[i].classList.remove('active');
+            parent.classList.add('active');
+        }
+    }
+
+    function switchBizType() {
+        let type = document.getElementById('biz-type').value;
+        document.getElementById('biz-npd-fields').style.display = type === 'npd' ? 'block' : 'none';
+        document.getElementById('biz-usn6-fields').style.display = type === 'usn6' ? 'block' : 'none';
+        document.getElementById('biz-usn15-fields').style.display = type === 'usn15' ? 'block' : 'none';
+        calcBusiness();
+    }
+
+    function calcBusiness() {
+        let type = document.getElementById('biz-type').value;
+        let result = 0;
+
+        if (type === 'npd') {
+            let fiz = Number(document.getElementById('biz-fiz').value) || 0;
+            let ur = Number(document.getElementById('biz-ur').value) || 0;
+            result = (fiz * 0.04) + (ur * 0.06);
+        } else if (type === 'usn6') {
+            let income = Number(document.getElementById('biz-usn6-income').value) || 0;
+            let tax = income * 0.06;
+            let fixedInsurance = 57390; 
+            let extraInsurance = income > 300000 ? Math.min((income - 300000) * 0.01, 321818) : 0;
+            let totalInsurance = fixedInsurance + extraInsurance;
+            let taxToPay = Math.max(0, tax - totalInsurance); 
+            result = taxToPay + totalInsurance; 
+        } else if (type === 'usn15') {
+            let income = Number(document.getElementById('biz-usn15-income').value) || 0;
+            let expense = Number(document.getElementById('biz-usn15-expense').value) || 0;
+            let fixedInsurance = 57390;
+            let extraInsurance = income > 300000 ? Math.min((income - 300000) * 0.01, 321818) : 0;
+            let totalInsurance = fixedInsurance + extraInsurance;
+            let profit = Math.max(0, income - (expense + totalInsurance));
+            let tax = profit * 0.15;
+            let minTax = income * 0.01;
+            let taxToPay = Math.max(tax, minTax);
+            result = taxToPay + totalInsurance;
+        }
+
+        document.getElementById('biz-result').innerText = Math.round(result).toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function calcPeople() {
+        let spent = Number(document.getElementById('people-spent').value) || 0;
+        let type = document.getElementById('deduction-type').value;
+        let result = 0;
+
+        if (type === 'health') {
+            result = Math.min(spent, 150000) * 0.13;
+        } else if (type === 'property') {
+            result = Math.min(spent, 2000000) * 0.13;
+        } else if (type === 'mortgage') {
+            result = Math.min(spent, 3000000) * 0.13;
+        } else if (type === 'iis') {
+            result = Math.min(spent, 400000) * 0.13;
+        }
+        document.getElementById('people-result').innerText = Math.round(result).toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function calcSavings() {
+        let income = Number(document.getElementById('savings-income').value) || 0;
+        let rate = Number(document.getElementById('savings-rate').value) || 16;
+        let isRich = document.getElementById('savings-rich').checked;
+        let freeBase = 1000000 * (rate / 100);
+        document.getElementById('savings-freebase').innerText = 'Необлагаемая база: ' + Math.round(freeBase).toLocaleString('ru-RU') + ' ₽';
+        let tax = 0;
+        if (income > freeBase) {
+            tax = (income - freeBase) * (isRich ? 0.15 : 0.13);
+        }
+        document.getElementById('savings-result').innerText = Math.round(tax).toLocaleString('ru-RU') + ' ₽';
+    }
+</script>
+
+</body>
+</html>
